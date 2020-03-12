@@ -21,22 +21,33 @@ private Item[] store =
   new Item(18871, 69), 
   new Item(19967, 45)
 };                             
-public int linearSearch(int catNumToFind)
+public int linearSearch(int target)
 {
   //complete this method
+  int guess = 0;
+  while (guess<store.length) 
+  {
+    if (store[guess].getCatNum()==target) return store[guess].getInventory();
+    guess++;
+  }
   return -1;
 }
-public int recursiveLinearSearch(int catNumToFind, int startIndex)
+public int recursiveLinearSearch(int target, int startIndex)
+{
+  //complete this method  
+  if (startIndex>=store.length) return -1;
+  if (store[startIndex].getCatNum()==target) return store[startIndex].getInventory();
+  return recursiveLinearSearch(target, startIndex+1);
+
+
+}
+public int binarySearch(int target)
 {
   //complete this method
+  int low = 0; int high = store.length;    
   return -1;
 }
-public int binarySearch(int catNumToFind)
-{
-  //complete this method    
-  return -1;
-}
-public int recursiveBinarySearch(int catNumToFind, int nLow, int nHigh)
+public int recursiveBinarySearch(int target, int nLow, int nHigh)
 {
   //complete this method    
   return -1;
